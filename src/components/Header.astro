@@ -1,0 +1,22 @@
+---
+import { css, cx } from '../../styled-system/css';
+import { flex } from '../../styled-system/patterns';
+import { ThemeIcon } from '~/components/ThemeIcon';
+import { container } from '../../styled-system/patterns';
+
+const headerStyles = css({
+  position: 'sticky',
+  top: 0,
+  bg: 'bg.default/75',
+  backdropFilter: 'auto',
+  backdropBlur: 'sm',
+  zIndex: 'sticky'
+});
+---
+
+<header class={headerStyles}>
+  <div class={cx(container(), flex({ justify: 'space-between' }))}>
+    <p>AMAP Couffouleux</p>
+    <ThemeIcon client:only />
+  </div>
+</header>

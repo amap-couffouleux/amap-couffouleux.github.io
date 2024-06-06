@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import { ContractsTable } from '../components/ContractsTable';
+import { Heading } from '~/components/ui/Heading';
+import { Calendar } from '~/components/Calendar';
+import { getCollection } from 'astro:content';
+import { css } from 'styled-system/css';
+
+const contracts = await getCollection('contracts');
+
+const events = new Map();
+
+for (const contract of contracts) {
+  for (const date of contract.data.dates) {
+    const key = date.toISOString().slice(0, 10);
+
+    if (!events.has(key)) {
+      events.set(key, [contract.slug]);
+    } else {
+      events.set(key, [...events.get(key), contract.slug]);
+    }
+  }
+}
+
+---
+
+<Layout title="AMAP Couffouleux">
+  <Heading as="h1" size="4xl" className={css({ fontWeight: 'black', mb: '4' })}>AMAP Couffouleux</Heading>
+
+  <p class={css({ mb: '2' })}>Bienvenue sur le site de l'AMAP de Couffouleux</p>
+
+  <p class={css({ mb: '4' })}>
+    Vous y trouverez la liste des contrats, les dates des prochaines distributions, ou toutes autres informations
+    pratiques et nécessaires pour vous inscrire.
+  </p>
+
+  <hr class={css({ mb: '10' })} />
+
+  <Heading as="h2" size="2xl" className={css({ mb: '2' })}> Les contrats </Heading>
+
+  <ContractsTable className={css({ mb: '10' })} />
+
+  <Heading as="h2" size="2xl" className={css({ mb: '2' })}> Les distributions </Heading>
+
+  <Calendar events={events} contracts={contracts} client:load />
+</Layout>

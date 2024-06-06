@@ -1,0 +1,62 @@
+---
+import '../styles/main.css';
+
+import { css } from '../../styled-system/css';
+import Header from '~/components/Header.astro';
+import { container } from '../../styled-system/patterns';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥕</text></svg>">
+    <meta name="description" content="Le site de l'AMAP de Couffouleux" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <script is:inline>
+      // Copy from lib/theme
+      function getTheme() {
+        if (typeof localStorage !== 'undefined') {
+          const theme = localStorage.getItem('theme');
+          if (theme === 'light' || theme === 'dark') {
+            return theme;
+          }
+        }
+
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+
+        return 'light';
+      }
+
+      document.documentElement.classList.toggle('dark', getTheme() === 'dark');
+    </script>
+
+    <Header />
+
+    <img
+      src="/banner.jpg"
+      alt=""
+      class={css({
+        objectFit: 'cover',
+        height: '30vh',
+        width: '100%',
+      })}
+    />
+
+    <main class={container({py:4})}>
+      <slot />
+    </main>
+  </body>
+</html>

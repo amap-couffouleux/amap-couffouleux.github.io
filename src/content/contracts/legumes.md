@@ -2,7 +2,7 @@
 title: Légumes
 icon: 🥕
 isOpened: false
-periodicity: weekly
+rythme: weekly
 color: '#ed6c31'
 dates:
   [

@@ -6,7 +6,7 @@ const contracts = defineCollection({
     title: z.string(),
     icon: z.string(),
     isOpened: z.boolean(),
-    periodicity: z.enum(['weekly', 'bimonthly', 'monthly', 'bimester', 'quarterly', 'yearly']),
+    rythme: z.enum(['weekly', 'bimonthly', 'monthly', 'bimester', 'quarterly', 'yearly']),
     dates: z.array(z.date()),
     color: z.string(),
   }),

@@ -115,9 +115,6 @@ export function Calendar({ contracts, events }: Data) {
           <Button onClick={goPrevious} size="xs">
             {'<'}
           </Button>
-          <Button onClick={goToday} size="xs">
-            Aujourd'hui
-          </Button>
           <Button onClick={goNext} size="xs">
             {'>'}
           </Button>

@@ -19,9 +19,9 @@
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.11",
     "preact": "^10.22.0",
-    "react": "npm:@preact/compat@^17.1.2",
-    "react-dom": "npm:@preact/compat@^17.1.2",
-    "typescript": "^5.4.5"
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest",
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.40.1",

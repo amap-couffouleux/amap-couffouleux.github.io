@@ -1,5 +1,5 @@
 ---
-title: Fruits
+title: Jangopom
 icon: 🍎
 isOpened: true
 rythme: monthly

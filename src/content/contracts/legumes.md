@@ -3,7 +3,7 @@ title: Légumes
 icon: 🥕
 isOpened: false
 rythme: weekly
-color: '#ed6c31'
+color: 'indigo'
 dates:
   [
     2024-06-04,

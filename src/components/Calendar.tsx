@@ -7,6 +7,8 @@ import { Button } from './ui/Button';
 import type { CollectionEntry } from 'astro:content';
 import { Badge } from './ui/Badge';
 
+import { colors } from '~/lib/colors';
+
 const days = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'];
 
 const currentDateFormat = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' }).format;
@@ -20,7 +22,7 @@ const calendarCss = css({
 
 const weekCss = css({
   display: 'grid',
-  gridTemplateColumns: '1fr 2fr 1fr 1fr 1fr 1fr 1fr',
+  gridTemplateColumns: '1fr 3fr 1fr 1fr 1fr 1fr 1fr',
 });
 
 const cellCss = css({
@@ -61,15 +63,22 @@ function Cell({ day, current, events, contracts }: CellProps) {
 
   const event = events.get(formatISO9075(day, { representation: 'date' }));
 
-  const distributions = event?.map((slug) => {
-    const contract = contracts.find((c) => c.slug === slug)?.data;
-    return {
-      slug,
-      title: contract!.title,
-      icon: contract!.icon,
-      color: contract!.color,
-    };
-  });
+  const distributions = event
+    ?.map((slug) => {
+      const contract = contracts.find((c) => c.slug === slug)?.data;
+
+      if (!contract) {
+        return null;
+      }
+
+      return {
+        slug,
+        title: contract.title,
+        icon: contract.icon,
+        color: colors[contract.color],
+      };
+    })
+    .filter((el) => el != null);
 
   return (
     <div

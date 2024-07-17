@@ -1,6 +1,7 @@
 import * as Table from './ui/Table';
 import { Badge } from './ui/Badge';
 import { getCollection } from 'astro:content';
+import { colors } from '~/lib/colors';
 
 const contracts = await getCollection('contracts');
 
@@ -42,7 +43,7 @@ export function ContractsTable({ className }: { className?: string }) {
         {contracts.map((contract) => (
           <Table.Row key={contract.id}>
             <Table.Cell css={{ fontWeight: 'medium' }}>
-              <Badge size="sm" variant="solid" style={{ background: contract.data.color }}>
+              <Badge size="sm" variant="solid" style={{ background: colors[contract.data.color] }}>
                 {contract.data.icon} {contract.data.title}
               </Badge>
             </Table.Cell>

@@ -3,7 +3,7 @@ title: Lait
 icon: 🥛
 isOpened: true
 rythme: weekly
-color: '#FBD2E0'
+color: 'violet'
 dates:
   [
     2024-06-25,

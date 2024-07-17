@@ -51,6 +51,7 @@ const cellCss = css({
 type Data = {
   contracts: Array<CollectionEntry<'contracts'>>;
   events: Map<string, Array<string>>;
+  className?: string;
 };
 
 type CellProps = {
@@ -104,11 +105,11 @@ function Cell({ day, current, events, contracts }: CellProps) {
   );
 }
 
-export function Calendar({ contracts, events }: Data) {
-  const { calendar, current, goNext, goPrevious, goToday } = useCalendar();
+export function Calendar({ contracts, events, className }: Data) {
+  const { calendar, current, goNext, goPrevious } = useCalendar();
 
   return (
-    <div>
+    <div className={className}>
       <HStack css={{ justifyContent: 'space-between' }}>
         {currentDateFormat(current)}
         <div className={css({ gap: 1, display: 'flex', mb: 1 })}>

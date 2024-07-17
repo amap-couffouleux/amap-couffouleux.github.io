@@ -6,6 +6,7 @@ import { Heading } from '~/components/ui/Heading';
 import { Calendar } from '~/components/Calendar';
 import { getCollection } from 'astro:content';
 import { css } from 'styled-system/css';
+import { MapContainer } from '~/components/Map';
 
 const contracts = await getCollection('contracts');
 
@@ -43,5 +44,17 @@ for (const contract of contracts) {
 
   <Heading as="h2" size="2xl" className={css({ mb: '2' })}> Les distributions </Heading>
 
-  <Calendar events={events} contracts={contracts} client:load />
+  <p class={css({ mb: '4' })}>
+    Les distributions ont lieu tous les <strong>mardis</strong> de <strong>18h15</strong> à <strong>19h15</strong>.
+  </p>
+
+  <Calendar events={events} contracts={contracts} className={css({ mb: '10' })} client:load />
+
+  <Heading as="h2" size="2xl" className={css({ mb: '2' })}>Informations pratiques</Heading>
+
+  <p class={css({ mb: '4' })}>
+    Adresse : Chemin du Port-Haut, 81800 Couffouleux<br />
+  </p>
+
+  <MapContainer client:only="preact" />
 </Layout>

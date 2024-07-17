@@ -18,14 +18,17 @@
     "astro": "^4.10.0",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.11",
+    "leaflet": "^1.9.4",
     "preact": "^10.22.0",
     "react": "npm:@preact/compat@latest",
     "react-dom": "npm:@preact/compat@latest",
+    "react-leaflet": "^4.2.1",
     "typescript": "^5.5.3"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.40.1",
     "@park-ui/panda-preset": "^0.37.1",
+    "@types/leaflet": "^1.9.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0"
   },

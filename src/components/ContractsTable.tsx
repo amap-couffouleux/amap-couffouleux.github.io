@@ -31,7 +31,7 @@ function BadgeNo() {
 
 export function ContractsTable({ className }: { className?: string }) {
   return (
-    <Table.Root variant="plain" className={className}>
+    <Table.Root variant="plain" className={className} size={'sm'}>
       <Table.Head>
         <Table.Row>
           <Table.Header>Produit(s)</Table.Header>

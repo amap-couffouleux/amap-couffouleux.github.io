@@ -3,8 +3,8 @@ title: Pain
 icon: 🥖
 isOpened: true
 rythme: weekly
-color: 'jade'
-dates: 
+color: 'green'
+dates:
   [
     2024-06-25,
     2024-07-02,
@@ -25,6 +25,6 @@ dates:
     2024-12-03,
     2024-12-10,
     2024-12-17,
-    2024-12-24
+    2024-12-24,
   ]
 ---

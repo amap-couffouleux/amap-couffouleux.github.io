@@ -3,9 +3,6 @@ title: Ail
 icon: 🧄
 isOpened: true
 rythme: yearly
-color: 'lime'
-dates:
-  [
-    2024-09-10,
-  ]
+color: 'gray'
+dates: [2024-10-15]
 ---

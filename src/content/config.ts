@@ -1,5 +1,5 @@
 import { z, defineCollection } from 'astro:content';
-import { colors, type Colors } from '~/lib/colors';
+// import { colors, type Colors } from '~/lib/colors';
 
 const contracts = defineCollection({
   type: 'content',
@@ -9,7 +9,7 @@ const contracts = defineCollection({
     isOpened: z.boolean(),
     rythme: z.enum(['weekly', 'bimonthly', 'monthly', 'bimester', 'quarterly', 'yearly']),
     dates: z.array(z.date()),
-    color: z.custom<Colors>((v) => Object.keys(colors).includes(v as string)),
+    // color: z.custom<Colors>((v) => Object.keys(colors).includes(v as string)),
   }),
 });
 

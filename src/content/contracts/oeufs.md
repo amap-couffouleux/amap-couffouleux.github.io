@@ -3,7 +3,7 @@ title: Œufs
 icon: 🐔
 isOpened: true
 rythme: monthly
-color: 'cyan'
+color: 'teal'
 dates:
   [
     2024-07-02,

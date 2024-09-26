@@ -5,9 +5,8 @@ import { isToday, isSameMonth, formatISO9075 } from 'date-fns';
 import { useCalendar } from '~/hooks/useCalendar';
 import { Button } from './ui/Button';
 import type { CollectionEntry } from 'astro:content';
-import { Badge } from './ui/Badge';
 
-import { colors } from '~/lib/colors';
+import { ContractBadge } from './ContractBadge';
 
 const days = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'];
 
@@ -66,17 +65,17 @@ function Cell({ day, current, events, contracts }: CellProps) {
 
   const distributions = event
     ?.map((slug) => {
-      const contract = contracts.find((c) => c.slug === slug)?.data;
+      const contract = contracts.find((c) => c.slug === slug);
 
       if (!contract) {
         return null;
       }
 
       return {
+        contract,
         slug,
-        title: contract.title,
-        icon: contract.icon,
-        color: colors[contract.color],
+        title: contract.data.title,
+        icon: contract.data.icon,
       };
     })
     .filter((el) => el != null);
@@ -90,17 +89,7 @@ function Cell({ day, current, events, contracts }: CellProps) {
     >
       <div>{date}</div>
 
-      {distributions?.map((distribution) => (
-        <Badge
-          key={distribution.slug}
-          size="sm"
-          variant="solid"
-          css={{ mr: 1 }}
-          style={{ background: distribution.color }}
-        >
-          {distribution.icon} {distribution.title}
-        </Badge>
-      ))}
+      {distributions?.map((distribution) => <ContractBadge contract={distribution.contract} />)}
     </div>
   );
 }

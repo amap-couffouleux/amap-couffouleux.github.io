@@ -42,7 +42,8 @@ const cellCss = css({
     color: 'fg.disabled',
   },
 
-  '&[data-today="true"]': {
+  // not used for now
+  '&.current': {
     boxShadow: 'inset 0 0 3px 0 {colors.accent.10}',
   },
 });
@@ -88,12 +89,7 @@ function Cell({ day, current, events, contracts }: CellProps) {
     .filter((el) => el != null);
 
   return (
-    <div
-      className={cellCss}
-      data-in-range={isSameMonth(day, current)}
-      data-today={isToday(day)}
-      data-mardi={day.getDay() === 2}
-    >
+    <div className={cellCss} data-in-range={isSameMonth(day, current)} data-mardi={day.getDay() === 2}>
       <div>{date}</div>
       <div className={badgesCss}>
         {distributions?.map((distribution) => <ContractBadge contract={distribution.contract} />)}
@@ -107,16 +103,15 @@ export function Calendar({ contracts, events, className }: Data) {
 
   return (
     <div className={className}>
-      <HStack css={{ justifyContent: 'space-between' }}>
+      <HStack className={css({ gap: 4, mb: 3, justifyContent: 'flex-end' })}>
+        <Button onClick={goPrevious} size="xs" variant={'outline'}>
+          {'<'}
+        </Button>
         {currentDateFormat(current)}
-        <div className={css({ gap: 1, display: 'flex', mb: 1 })}>
-          <Button onClick={goPrevious} size="xs">
-            {'<'}
-          </Button>
-          <Button onClick={goNext} size="xs">
-            {'>'}
-          </Button>
-        </div>
+
+        <Button onClick={goNext} size="xs" variant={'outline'}>
+          {'>'}
+        </Button>
       </HStack>
 
       <div className={cx(weekCss, css({ fontSize: 'xs' }))}>

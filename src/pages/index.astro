@@ -44,12 +44,12 @@ for (const contract of contracts) {
 
   <Heading as="h2" size="2xl" className={css({ mb: '2' })}> Les distributions </Heading>
 
-  <p class={css({ mb: '4' })}>
+  <p>
     Tous les <strong>mardis</strong> de <strong>18h15</strong> à <strong>19h15</strong>.
   </p>
 
   {/* can't use client:load because of the current day borders indicator */}
-  <Calendar events={events} contracts={contracts} className={css({ mb: '10' })} client:only="preact" />
+  <Calendar events={events} contracts={contracts} className={css({ mb: '10' })} client:load />
 
   <Heading as="h2" size="2xl" className={css({ mb: '2' })}>Informations pratiques</Heading>
 

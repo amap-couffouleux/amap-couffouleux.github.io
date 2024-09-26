@@ -47,6 +47,13 @@ const cellCss = css({
   },
 });
 
+const badgesCss = css({
+  display: 'flex',
+  flexWrap: 'wrap',
+  flexDirection: 'row',
+  gap: 1,
+});
+
 type Data = {
   contracts: Array<CollectionEntry<'contracts'>>;
   events: Map<string, Array<string>>;
@@ -88,8 +95,9 @@ function Cell({ day, current, events, contracts }: CellProps) {
       data-mardi={day.getDay() === 2}
     >
       <div>{date}</div>
-
-      {distributions?.map((distribution) => <ContractBadge contract={distribution.contract} />)}
+      <div className={badgesCss}>
+        {distributions?.map((distribution) => <ContractBadge contract={distribution.contract} />)}
+      </div>
     </div>
   );
 }

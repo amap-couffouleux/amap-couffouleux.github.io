@@ -4,6 +4,7 @@ icon: 🥖
 isOpened: true
 rythme: weekly
 color: 'green'
+from: 'Couffouleux'
 dates:
   [
     2024-06-25,

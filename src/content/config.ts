@@ -6,6 +6,7 @@ const contracts = defineCollection({
   schema: z.object({
     title: z.string(),
     icon: z.string(),
+    from: z.string(),
     isOpened: z.boolean(),
     rythme: z.enum(['weekly', 'bimonthly', 'monthly', 'bimester', 'quarterly', 'yearly']),
     dates: z.array(z.date()),

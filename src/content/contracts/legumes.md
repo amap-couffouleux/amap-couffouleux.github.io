@@ -4,6 +4,7 @@ icon: 🥕
 isOpened: false
 rythme: weekly
 color: 'blue'
+from: 'Loupiac'
 dates:
   [
     2024-06-04,

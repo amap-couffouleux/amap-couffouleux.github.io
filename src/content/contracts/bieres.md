@@ -4,6 +4,7 @@ icon: 🍺
 isOpened: true
 rythme: monthly
 color: 'slate'
+from: 'Busque'
 dates:
   [
     2024-06-25,

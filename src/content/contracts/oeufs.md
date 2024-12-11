@@ -4,6 +4,7 @@ icon: 🐔
 isOpened: true
 rythme: monthly
 color: 'teal'
+from: 'Couffouleux'
 dates:
   [
     2024-07-02,

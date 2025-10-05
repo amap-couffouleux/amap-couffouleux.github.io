@@ -7,7 +7,7 @@ export default defineConfig({
     '@pandacss/preset-base',
     createPreset({
       accentColor: 'cyan',
-      additionalColors: ['green', 'red'],
+      additionalColors: ['green', 'red', 'blue'],
     }),
   ],
 

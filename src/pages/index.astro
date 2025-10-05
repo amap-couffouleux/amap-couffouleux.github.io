@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 
 import { ContractsTable } from '../components/ContractsTable';
 import { Heading } from '~/components/ui/Heading';
-import { Calendar } from '~/components/Calendar';
 import { getCollection } from 'astro:content';
 import { css } from 'styled-system/css';
 import { MapContainer } from '~/components/Map';
+import { Agenda } from '~/components/Agenda';
 
 const contracts = await getCollection('contracts');
 
@@ -23,18 +23,12 @@ for (const contract of contracts) {
     }
   }
 }
-
 ---
 
 <Layout title="AMAP Couffouleux">
   <Heading as="h1" size="4xl" className={css({ fontWeight: 'black', mb: '4' })}>AMAP Couffouleux</Heading>
 
   <p class={css({ mb: '4' })}>Bienvenue sur le site de l'AMAP de Couffouleux</p>
-
-  {/* <p class={css({ mb: '4' })}>
-    Vous y trouverez la liste des contrats, les dates des prochaines distributions, ou toutes autres informations
-    pratiques et nécessaires pour vous inscrire.
-  </p> */}
 
   <hr class={css({ mb: '10' })} />
 
@@ -49,7 +43,7 @@ for (const contract of contracts) {
   </p>
 
   {/* can't use client:load because of the current day borders indicator */}
-  <Calendar events={events} contracts={contracts} className={css({ mb: '10' })} client:load />
+  <Agenda contracts={contracts} className={css({ mb: '10' })} client:load />
 
   <Heading as="h2" size="2xl" className={css({ mb: '2' })}>Informations pratiques</Heading>
 

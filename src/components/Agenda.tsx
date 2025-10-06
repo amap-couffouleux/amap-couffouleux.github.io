@@ -71,6 +71,11 @@ const distributionItemCss = css({
   gap: 2,
 });
 
+const distributionNoteCss = css({
+  color: 'fg.muted',
+  fontSize: 'sm',
+});
+
 const todayIndicatorCss = css({
   display: 'flex',
   alignItems: 'center',
@@ -101,9 +106,14 @@ const emptyDistributionCss = css({
   color: 'fg.muted',
 });
 
+type ContractWithNote = {
+  contract: CollectionEntry<'contracts'>;
+  note?: string;
+};
+
 type Event = {
   date: Date;
-  contracts: Array<CollectionEntry<'contracts'>>;
+  contracts: Array<ContractWithNote>;
 };
 
 const currentMonthFormat = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' }).format;
@@ -115,17 +125,23 @@ type AgendaProps = {
 
 export function Agenda({ contracts, className }: AgendaProps) {
   const distributions = useMemo(() => {
-    const eventsMap = new Map<string, Array<CollectionEntry<'contracts'>>>();
+    const eventsMap = new Map<string, Array<ContractWithNote>>();
 
     for (const contract of contracts) {
-      for (const date of contract.data.dates) {
-        const dateKey = formatISO9075(date, { representation: 'date' });
+      for (const distribution of contract.data.distributions) {
+        const dateKey = formatISO9075(distribution.date, { representation: 'date' });
 
         if (!eventsMap.has(dateKey)) {
           eventsMap.set(dateKey, []);
         }
 
-        eventsMap.get(dateKey)!.push(contract);
+        // Use distribution note if present, otherwise use contract defaultNote
+        const note = distribution.note || contract.data.defaultNote;
+
+        eventsMap.get(dateKey)!.push({
+          contract,
+          note,
+        });
       }
     }
 
@@ -228,9 +244,15 @@ export function Agenda({ contracts, className }: AgendaProps) {
                       {isTodayDate && <div className={css({ fontSize: 'xs', color: 'blue.9' })}>Aujourd'hui</div>}
                     </div>
                     <div className={distributionListCss}>
-                      {item.contracts.map((contract, contractIndex) => (
+                      {item.contracts.map((contractWithNote, contractIndex) => (
                         <div key={contractIndex} className={distributionItemCss}>
-                          <ContractBadge contract={contract} />
+                          <ContractBadge contract={contractWithNote.contract} />
+                          {contractWithNote.note && (
+                            <>
+                              <span className={distributionNoteCss}>→</span>
+                              <span className={distributionNoteCss}>{contractWithNote.note}</span>
+                            </>
+                          )}
                         </div>
                       ))}
                     </div>

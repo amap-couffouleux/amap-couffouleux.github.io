@@ -5,5 +5,7 @@ isOpened: true
 rythme: monthly
 color: 'purple'
 from: 'Gaillac'
-dates: [2025-09-09, 2025-10-07]
+distributions:
+  - date: 2025-09-09
+  - date: 2025-10-07
 ---

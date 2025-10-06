@@ -5,5 +5,6 @@ isOpened: true
 rythme: monthly
 color: 'slate'
 from: 'Busque'
-dates: [2025-08-12]
+distributions:
+  - date: 2025-08-12
 ---

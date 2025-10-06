@@ -5,5 +5,6 @@ isOpened: true
 rythme: monthly
 color: 'teal'
 from: 'Ambres'
-dates: [2025-10-07]
+distributions:
+  - date: 2025-10-07
 ---

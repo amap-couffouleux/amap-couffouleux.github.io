@@ -9,7 +9,13 @@ const contracts = defineCollection({
     from: z.string(),
     isOpened: z.boolean(),
     rythme: z.enum(['weekly', 'bimonthly', 'monthly', 'bimester', 'quarterly', 'yearly']),
-    dates: z.array(z.date()),
+    defaultNote: z.string().optional(),
+    distributions: z.array(
+      z.object({
+        date: z.date(),
+        note: z.string().optional(),
+      })
+    ),
     // color: z.custom<Colors>((v) => Object.keys(colors).includes(v as string)),
   }),
 });

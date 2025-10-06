@@ -233,7 +233,7 @@ export function Agenda({ contracts, className }: AgendaProps) {
                 <>
                   {showTodayIndicator && (
                     <div key="today-indicator" className={todayIndicatorCss}>
-                      <span>Aujourd'hui - {format(today, 'd MMMM yyyy', { locale: fr })}</span>
+                      <span>Aujourd'hui - {format(today, 'EEEE d MMMM yyyy', { locale: fr })}</span>
                     </div>
                   )}
                   <div key={dateKey} className={dateGroupCss}>

@@ -42,7 +42,13 @@ for (const contract of contracts) {
     Tous les <strong>mardis</strong> de <strong>18h15</strong> à <strong>19h15</strong>.
   </p>
 
-  <Agenda contracts={contracts} className={css({ mb: '10' })} client:load />
+  <Agenda contracts={contracts} className={css({ mb: '10' })} client:only="preact">
+    <div slot="fallback">
+      <div class={css({ height: '500px', textAlign: 'center', color: 'fg.muted', py: 10 })}>
+        Chargement de l'agenda...
+      </div>
+    </div>
+  </Agenda>
 
   <Heading as="h2" size="2xl" className={css({ mb: '2' })}>Informations pratiques</Heading>
 

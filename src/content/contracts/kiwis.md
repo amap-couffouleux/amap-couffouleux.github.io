@@ -5,5 +5,6 @@ isOpened: true
 rythme: monthly
 from: 'Rabastens'
 distributions:
-  - date: 2025-12-16
+  - date: 2026-01-27
+  - date: 2026-02-24
 ---

@@ -6,15 +6,10 @@ rythme: weekly
 color: 'green'
 from: 'Couffouleux'
 distributions:
-  - date: 2025-10-07
-  - date: 2025-10-14
-  - date: 2025-10-21
-  - date: 2025-11-04
-  - date: 2025-11-11
-  - date: 2025-11-18
-  - date: 2025-11-25
-  - date: 2025-12-02
-  - date: 2025-12-09
-  - date: 2025-12-16
-  - date: 2025-12-23
+  - date: 2026-01-13
+  - date: 2026-01-20
+  - date: 2026-01-27
+  - date: 2026-02-03
+  - date: 2026-02-10
+  - date: 2026-02-17
 ---

@@ -1,7 +1,7 @@
 ---
 title: Bœuf
 icon: 🐂
-enabled: true
+enabled: false
 isOpened: true
 rythme: yearly
 from: "Le Mas-d'Azil 09"

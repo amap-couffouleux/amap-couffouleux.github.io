@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import { ContractBadge } from './ContractBadge';
 import { Box } from 'styled-system/jsx';
 
-const contracts = await getCollection('contracts');
+const contracts = await getCollection('contracts', ({ data }) => data.enabled);
 
 const rythme = {
   weekly: 'hebdo',

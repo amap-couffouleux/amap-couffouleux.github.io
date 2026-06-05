@@ -1,9 +1,9 @@
 ---
 title: Bières
 icon: 🍺
+enabled: true
 isOpened: true
 rythme: monthly
-color: 'slate'
 from: 'Busque'
 distributions:
   - date: 2025-12-16

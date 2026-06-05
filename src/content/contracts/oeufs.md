@@ -1,9 +1,9 @@
 ---
 title: Œufs
 icon: 🐔
+enabled: true
 isOpened: true
 rythme: monthly
-color: 'teal'
 from: 'Ambres'
 distributions:
   - date: 2026-01-13

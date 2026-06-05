@@ -1,9 +1,9 @@
 ---
 title: Herboristerie
 icon: 🌼
+enabled: true
 isOpened: true
 rythme: bimester
-color: green
 from: Gaillac
 distributions:
   - date: 2025-10-07

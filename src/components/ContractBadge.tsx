@@ -2,7 +2,7 @@ import { Badge } from './ui/Badge';
 import { getCollection } from 'astro:content';
 import { colors } from '~/lib/colors';
 
-const contracts = await getCollection('contracts');
+const contracts = await getCollection('contracts', ({ data }) => data.enabled);
 
 function getColor(index: number) {
   const colorsArray = Object.values(colors);

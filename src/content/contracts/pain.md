@@ -1,9 +1,9 @@
 ---
 title: Pain
 icon: 🥖
+enabled: true
 isOpened: true
 rythme: weekly
-color: 'green'
 from: 'Couffouleux'
 distributions:
   - date: 2026-05-05

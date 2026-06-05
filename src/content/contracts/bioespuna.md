@@ -1,9 +1,9 @@
 ---
 title: BioEspuña
 icon: 🇪🇸
+enabled: true
 isOpened: true
 rythme: monthly
-color: 'olive'
 from: 'Espagne'
 distributions:
   - date: 2026-01-13

@@ -1,9 +1,9 @@
 ---
 title: Jangopom
 icon: 🍎
+enabled: true
 isOpened: true
 rythme: monthly
-color: 'purple'
 from: 'Gaillac'
 distributions:
   - date: 2025-09-09

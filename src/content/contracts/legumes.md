@@ -1,6 +1,7 @@
 ---
 title: Légumes
 icon: 🥕
+enabled: true
 isOpened: false
 rythme: weekly
 from: 'Loupiac'

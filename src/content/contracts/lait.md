@@ -1,6 +1,7 @@
 ---
 title: Lait
 icon: 🥛
+enabled: true
 isOpened: true
 rythme: weekly
 from: 'Couffouleux'

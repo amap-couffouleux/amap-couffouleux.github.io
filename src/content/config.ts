@@ -7,6 +7,7 @@ const contracts = defineCollection({
     title: z.string(),
     icon: z.string(),
     from: z.string(),
+    enabled: z.boolean(),
     isOpened: z.boolean(),
     rythme: z.enum(['weekly', 'bimonthly', 'monthly', 'bimester', 'quarterly', 'yearly']),
     defaultNote: z.string().optional(),

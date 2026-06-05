@@ -8,7 +8,7 @@ import { css } from 'styled-system/css';
 import { MapContainer } from '~/components/Map';
 import { Agenda } from '~/components/Agenda';
 
-const contracts = await getCollection('contracts');
+const contracts = await getCollection('contracts', ({ data }) => data.enabled);
 
 const events = new Map();
 

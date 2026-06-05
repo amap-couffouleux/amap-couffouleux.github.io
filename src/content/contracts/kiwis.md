@@ -1,6 +1,7 @@
 ---
 title: Kiwis
 icon: 🥝
+enabled: true
 isOpened: true
 rythme: monthly
 from: 'Rabastens'

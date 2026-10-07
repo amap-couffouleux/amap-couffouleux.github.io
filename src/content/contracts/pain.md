@@ -4,26 +4,8 @@ icon: 🥖
 enabled: true
 isOpened: true
 rythme: weekly
-from: 'Couffouleux'
+from: "Couffouleux"
 distributions:
-  - date: 2026-06-02
-  - date: 2026-06-09
-  - date: 2026-06-16
-  - date: 2026-06-23
-  - date: 2026-06-30
-  - date: 2026-07-07
-  - date: 2026-07-14
-  - date: 2026-07-21
-  - date: 2026-07-28
-  - date: 2026-08-04
-  - date: 2026-08-11
-  - date: 2026-08-18
-  - date: 2026-08-25
-  - date: 2026-09-01
-  - date: 2026-09-08
-  - date: 2026-09-15
-  - date: 2026-09-22
-  - date: 2026-09-29
   - date: 2026-10-06
   - date: 2026-10-13
   - date: 2026-10-20

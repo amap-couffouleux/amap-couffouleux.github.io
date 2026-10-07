@@ -4,30 +4,15 @@ icon: 🇪🇸
 enabled: true
 isOpened: true
 rythme: monthly
-from: 'Espagne'
+from: "Espagne"
 distributions:
-  - date: 2026-01-13
-    note: Groupe 1
-  - date: 2026-01-20
-    note: Groupe 2
-  - date: 2026-02-10
-    note: Groupe 1
-  - date: 2026-02-24
-    note: Groupe 2
-  - date: 2026-03-10
-    note: Groupe 1
-  - date: 2026-03-24
-    note: Groupe 2
-  - date: 2026-04-14
-    note: Groupe 1
-  - date: 2026-04-21
-    note: Groupe 2
-  - date: 2026-05-12
-    note: Groupe 1
-  - date: 2026-05-19
-    note: Groupe 2
-  - date: 2026-06-09
-    note: Groupe 1
-  - date: 2026-06-16
-    note: Groupe 2
+  - date: 2026-10-13
+  - date: 2026-11-10
+  - date: 2026-12-08
+  - date: 2027-01-12
+  - date: 2027-02-09
+  - date: 2027-03-09
+  - date: 2027-04-14
+  - date: 2027-05-11
+  - date: 2027-06-08
 ---
